@@ -197,4 +197,374 @@
 		"img": "/assets/imgs/a/Wattpad.webp",
 		"categories": ["all", "popular", "media"]
 	}
+,
+	{
+		"name": "Replit",
+		"url": "https://replit.com/",
+		"img": "/assets/imgs/a/Replit.webp",
+		"categories": ["all", "dev", "popular"]
+	},
+	{
+		"name": "Vercel",
+		"url": "https://vercel.com/",
+		"img": "/assets/imgs/a/Vercel.webp",
+		"categories": ["all", "dev", "hosting"]
+	},
+	{
+		"name": "Cyclic",
+		"url": "https://www.cyclic.sh/",
+		"img": "/assets/imgs/a/Cyclic.webp",
+		"categories": ["all", "dev", "hosting"]
+	},
+	{
+		"name": "Koyeb",
+		"url": "https://www.koyeb.com/",
+		"img": "/assets/imgs/a/Koyeb.webp",
+		"categories": ["all", "dev", "hosting"]
+	}
+,
+	{
+		"name": "Netlify",
+		"url": "https://www.netlify.com/",
+		"img": "/assets/imgs/a/Netlify.webp",
+		"categories": ["all", "dev", "hosting"]
+	},
+	{
+		"name": "Firebase",
+		"url": "https://firebase.google.com/",
+		"img": "/assets/imgs/a/Firebase.webp",
+		"categories": ["all", "dev", "hosting", "cloud"]
+	},
+	{
+		"name": "Notion",
+		"url": "https://www.notion.so/",
+		"img": "/assets/imgs/a/Notion.webp",
+		"categories": ["all", "productivity"]
+	},
+	{
+		"name": "Tempo",
+		"url": "https://www.tempo.io/",
+		"img": "/assets/imgs/a/Tempo.webp",
+		"categories": ["all", "productivity", "time"]
+	},
+    
+	{
+		"name": "Slack",
+		"url": "https://slack.com/",
+		"img": "/assets/imgs/a/Slack.webp",
+		"categories": ["all", "messaging", "team"]
+	},
+	{
+		"name": "Google Drive",
+		"url": "https://drive.google.com/",
+		"img": "/assets/imgs/a/Google_Drive.webp",
+		"categories": ["all", "productivity", "cloud"]
+	},
+	{
+		"name": "Gmail",
+		"url": "https://mail.google.com/",
+		"img": "/assets/imgs/a/Gmail.webp",
+		"categories": ["all", "messaging"]
+	},
+	{
+		"name": "Dropbox",
+		"url": "https://www.dropbox.com/",
+		"img": "/assets/imgs/a/Dropbox.webp",
+		"categories": ["all", "cloud"]
+	},
+	{
+		"name": "Figma",
+		"url": "https://www.figma.com/",
+		"img": "/assets/imgs/a/Figma.webp",
+		"categories": ["all", "design"]
+	},
+	{
+		"name": "Trello",
+		"url": "https://trello.com/",
+		"img": "/assets/imgs/a/Trello.webp",
+		"categories": ["all", "productivity"]
+	},
+	{
+		"name": "Asana",
+		"url": "https://asana.com/",
+		"img": "/assets/imgs/a/Asana.webp",
+		"categories": ["all", "productivity"]
+	},
+	{
+		"name": "Jira",
+		"url": "https://www.atlassian.com/software/jira",
+		"img": "/assets/imgs/a/Jira.webp",
+		"categories": ["all", "dev", "project"]
+	},
+	{
+		"name": "Heroku",
+		"url": "https://www.heroku.com/",
+		"img": "/assets/imgs/a/Heroku.webp",
+		"categories": ["all", "dev", "hosting"]
+	},
+	{
+		"name": "DigitalOcean",
+		"url": "https://www.digitalocean.com/",
+		"img": "/assets/imgs/a/DigitalOcean.webp",
+		"categories": ["all", "dev", "hosting"]
+	},
+	{
+		"name": "Linode",
+		"url": "https://www.linode.com/",
+		"img": "/assets/imgs/a/Linode.webp",
+		"categories": ["all", "dev", "hosting"]
+	},
+	{
+		"name": "Cloudflare",
+		"url": "https://www.cloudflare.com/",
+		"img": "/assets/imgs/a/Cloudflare.webp",
+		"categories": ["all", "dev", "cdn"]
+	},
+	{
+		"name": "Stripe",
+		"url": "https://stripe.com/",
+		"img": "/assets/imgs/a/Stripe.webp",
+		"categories": ["all", "finance"]
+	},
+	{
+		"name": "PayPal",
+		"url": "https://www.paypal.com/",
+		"img": "/assets/imgs/a/PayPal.webp",
+		"categories": ["all", "finance"]
+	},
+	{
+		"name": "Zoom",
+		"url": "https://zoom.us/",
+		"img": "/assets/imgs/a/Zoom.webp",
+		"categories": ["all", "video", "meeting"]
+	},
+	{
+		"name": "Microsoft Teams",
+		"url": "https://www.microsoft.com/microsoft-teams/",
+		"img": "/assets/imgs/a/Microsoft_Teams.webp",
+		"categories": ["all", "team", "video"]
+	},
+	{
+		"name": "Office",
+		"url": "https://www.office.com/",
+		"img": "/assets/imgs/a/Office.webp",
+		"categories": ["all", "productivity"]
+	},
+	{
+		"name": "LinkedIn",
+		"url": "https://www.linkedin.com/",
+		"img": "/assets/imgs/a/LinkedIn.webp",
+		"categories": ["all", "social"]
+	},
+	{
+		"name": "Reddit",
+		"url": "https://www.reddit.com/",
+		"img": "/assets/imgs/a/Reddit.webp",
+		"categories": ["all", "social"]
+	},
+	{
+		"name": "Instagram",
+		"url": "https://www.instagram.com/",
+		"img": "/assets/imgs/a/Instagram.webp",
+		"categories": ["all", "media", "social"]
+	},
+	{
+		"name": "Facebook",
+		"url": "https://www.facebook.com/",
+		"img": "/assets/imgs/a/Facebook.webp",
+		"categories": ["all", "social"]
+	},
+	{
+		"name": "Medium",
+		"url": "https://medium.com/",
+		"img": "/assets/imgs/a/Medium.webp",
+		"categories": ["all", "reading"]
+	},
+	{
+		"name": "Stack Overflow",
+		"url": "https://stackoverflow.com/",
+		"img": "/assets/imgs/a/StackOverflow.webp",
+		"categories": ["all", "dev", "qa"]
+	},
+	{
+		"name": "CodePen",
+		"url": "https://codepen.io/",
+		"img": "/assets/imgs/a/CodePen.webp",
+		"categories": ["all", "dev", "playground"]
+	},
+	{
+		"name": "CodeSandbox",
+		"url": "https://codesandbox.io/",
+		"img": "/assets/imgs/a/CodeSandbox.webp",
+		"categories": ["all", "dev", "playground"]
+	},
+	{
+		"name": "Glitch",
+		"url": "https://glitch.com/",
+		"img": "/assets/imgs/a/Glitch.webp",
+		"categories": ["all", "dev", "playground"]
+	},
+	{
+		"name": "Docker",
+		"url": "https://www.docker.com/",
+		"img": "/assets/imgs/a/Docker.webp",
+		"categories": ["all", "dev", "containers"]
+	},
+	{
+		"name": "NPM",
+		"url": "https://www.npmjs.com/",
+		"img": "/assets/imgs/a/NPM.webp",
+		"categories": ["all", "dev", "package"]
+	},
+	{
+		"name": "AWS",
+		"url": "https://aws.amazon.com/",
+		"img": "/assets/imgs/a/AWS.webp",
+		"categories": ["all", "cloud", "hosting"]
+	}
+,
+	{
+		"name": "Spotify",
+		"url": "https://www.spotify.com/",
+		"img": "/assets/imgs/a/Spotify.webp",
+		"categories": ["all", "media", "music"]
+	},
+	{
+		"name": "Apple Music",
+		"url": "https://music.apple.com/",
+		"img": "/assets/imgs/a/Apple_Music.webp",
+		"categories": ["all", "media", "music"]
+	},
+	{
+		"name": "Soundtrap",
+		"url": "https://www.soundtrap.com/",
+		"img": "/assets/imgs/a/Soundtrap.webp",
+		"categories": ["all", "music"]
+	},
+	{
+		"name": "Khan Academy",
+		"url": "https://www.khanacademy.org/",
+		"img": "/assets/imgs/a/Khan_Academy.webp",
+		"categories": ["all", "education"]
+	},
+	{
+		"name": "Coursera",
+		"url": "https://www.coursera.org/",
+		"img": "/assets/imgs/a/Coursera.webp",
+		"categories": ["all", "education"]
+	},
+	{
+		"name": "Udemy",
+		"url": "https://www.udemy.com/",
+		"img": "/assets/imgs/a/Udemy.webp",
+		"categories": ["all", "education"]
+	},
+	{
+		"name": "Stack Exchange",
+		"url": "https://stackexchange.com/",
+		"img": "/assets/imgs/a/StackExchange.webp",
+		"categories": ["all", "qa"]
+	},
+	{
+		"name": "Wikipedia",
+		"url": "https://www.wikipedia.org/",
+		"img": "/assets/imgs/a/Wikipedia.webp",
+		"categories": ["all", "reference"]
+	},
+	{
+		"name": "IMDb",
+		"url": "https://www.imdb.com/",
+		"img": "/assets/imgs/a/IMDB.webp",
+		"categories": ["all", "media"]
+	},
+	{
+		"name": "Hulu",
+		"url": "https://www.hulu.com/",
+		"img": "/assets/imgs/a/Hulu.webp",
+		"categories": ["all", "media"]
+	},
+	{
+		"name": "Scribd",
+		"url": "https://www.scribd.com/",
+		"img": "/assets/imgs/a/Scribd.webp",
+		"categories": ["all", "reading"]
+	},
+	{
+		"name": "Opera GX",
+		"url": "https://www.opera.com/gx",
+		"img": "/assets/imgs/a/Opera_GX.webp",
+		"categories": ["all", "browser", "games"]
+	},
+	{
+		"name": "Brave",
+		"url": "https://brave.com/",
+		"img": "/assets/imgs/a/Brave.webp",
+		"categories": ["all", "browser"]
+	},
+	{
+		"name": "Vivaldi",
+		"url": "https://vivaldi.com/",
+		"img": "/assets/imgs/a/Vivaldi.webp",
+		"categories": ["all", "browser"]
+	},
+	{
+		"name": "Bitbucket",
+		"url": "https://bitbucket.org/",
+		"img": "/assets/imgs/a/Bitbucket.webp",
+		"categories": ["all", "dev"]
+	},
+	{
+		"name": "Azure",
+		"url": "https://azure.microsoft.com/",
+		"img": "/assets/imgs/a/Azure.webp",
+		"categories": ["all", "cloud", "hosting"]
+	},
+	{
+		"name": "GCP",
+		"url": "https://cloud.google.com/",
+		"img": "/assets/imgs/a/GCP.webp",
+		"categories": ["all", "cloud", "hosting"]
+	},
+	{
+		"name": "Auth0",
+		"url": "https://auth0.com/",
+		"img": "/assets/imgs/a/Auth0.webp",
+		"categories": ["all", "security"]
+	},
+	{
+		"name": "Okta",
+		"url": "https://www.okta.com/",
+		"img": "/assets/imgs/a/Okta.webp",
+		"categories": ["all", "security"]
+	},
+	{
+		"name": "Sentry",
+		"url": "https://sentry.io/",
+		"img": "/assets/imgs/a/Sentry.webp",
+		"categories": ["all", "dev", "monitoring"]
+	},
+	{
+		"name": "New Relic",
+		"url": "https://newrelic.com/",
+		"img": "/assets/imgs/a/NewRelic.webp",
+		"categories": ["all", "dev", "monitoring"]
+	},
+	{
+		"name": "PagerDuty",
+		"url": "https://www.pagerduty.com/",
+		"img": "/assets/imgs/a/PagerDuty.webp",
+		"categories": ["all", "dev", "ops"]
+	},
+	{
+		"name": "Zapier",
+		"url": "https://zapier.com/",
+		"img": "/assets/imgs/a/Zapier.webp",
+		"categories": ["all", "automation"]
+	},
+	{
+		"name": "IFTTT",
+		"url": "https://ifttt.com/",
+		"img": "/assets/imgs/a/IFTTT.webp",
+		"categories": ["all", "automation"]
+	}
 ]
