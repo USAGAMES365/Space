@@ -81,16 +81,26 @@ async function fetchFaviconFor(site) {
             return;
         }
 
-        // Convert to webp using cwebp CLI for speed
-        try {
-            // ensure tmp dir
-            const tmpDir = path.join(outDir, '..', 'tmp');
-            if (!fs.existsSync(tmpDir)) fs.mkdirSync(tmpDir, { recursive: true });
-            const tmpFile = path.join(tmpDir, `${safeName(site.name)}-${Date.now()}`);
-            fs.writeFileSync(tmpFile, buffer);
+const { execFileSync } = require('child_process');
 
-            // run cwebp
-            try {
+// Check for cwebp CLI availability at startup
+try {
+    execFileSync('cwebp', ['-version'], { stdio: 'ignore' });
+} catch (e) {
+    console.error('Error: cwebp CLI not found. Please install cwebp and ensure it is available in your PATH.');
+    process.exit(1);
+}
+
+// Convert to webp using cwebp CLI for speed
+try {
+    // ensure tmp dir
+    const tmpDir = path.join(outDir, '..', 'tmp');
+    if (!fs.existsSync(tmpDir)) fs.mkdirSync(tmpDir, { recursive: true });
+    const tmpFile = path.join(tmpDir, `${safeName(site.name)}-${Date.now()}`);
+    fs.writeFileSync(tmpFile, buffer);
+
+    // run cwebp
+    try {
                 execFileSync('cwebp', ['-q', '80', tmpFile, '-o', outPath], { stdio: 'ignore' });
                 console.log('Saved', outPath);
             } catch (e) {
