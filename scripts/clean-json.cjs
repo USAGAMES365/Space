@@ -32,7 +32,7 @@ for (const item of arr) {
     const url = item.url || '';
     try {
         const u = new URL(url);
-        const hostname = u.hostname;
+        const {hostname} = u;
         if (isValidHostname(hostname)) {
             cleaned.push(item);
         } else {
