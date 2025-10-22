@@ -33,6 +33,50 @@
 	outline: 2px solid var(--image-outline-color);
 }
 
+/* Folder / Category bar styles */
+.appFoldersWrapper {
+	display: flex;
+	gap: 10px;
+align-items: center;
+}
+.appFolderBtn {
+	padding: 8px 12px;
+	border-radius: 999px;
+	background: var(--folder-bg, #ffffff10);
+	color: var(--folder-color, #fff);
+	cursor: pointer;
+	border: 1px solid rgba(255,255,255,0.08);
+font-size: 14px;
+}
+.appFolderBtn.active {
+	outline: 2px solid var(--border-color);
+}
+
+.appFolderBtn:hover {
+	background: rgba(255,255,255,0.06);
+	transform: translateY(-1px);
+}
+
+/* Group header */
+.appGroupHeader {
+	width: 100%;
+font-weight: 600;
+margin: 12px 0 6px 0;
+}
+
+/* When folder is active, group apps under header */
+.appsContainer.grouped {
+	display: block;
+}
+.appsContainer.grouped .appGroup {
+	margin-bottom: 18px;
+}
+.appRow {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+}
+
 .gameImage {
 	opacity: 0;
 	animation: fade-in-bottom 1s;

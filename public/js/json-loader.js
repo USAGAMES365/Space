@@ -216,26 +216,58 @@ document.addEventListener('DOMContentLoaded', () => {
 		fetch('/json/a.json')
 			.then(response => response.json())
 			.then(data => {
+				// load custom apps from localStorage and prepend them so they show first
+				try {
+					const custom = JSON.parse(localStorage.getItem('customApps') || '[]');
+					if (Array.isArray(custom) && custom.length) {
+						data = custom.concat(data);
+					}
+				} catch (e) {
+					console.warn('Failed to parse customApps', e);
+				}
 				const appsContainer = document.querySelector('.appsContainer');
+				const foldersWrapper = document.querySelector('.appFoldersWrapper');
 
 				data.sort((a, b) => a.name.localeCompare(b.name));
 
+				// collect unique categories
+				const categorySet = new Set();
 				data.forEach(app => {
+					if (app.categories && Array.isArray(app.categories)) {
+						// if app only has 'all' treat it as uncategorized
+						const meaningful = app.categories.filter(c => c !== 'all');
+						if (meaningful.length === 0) {
+							categorySet.add('Uncategorized');
+						} else {
+							meaningful.forEach(c => categorySet.add(c));
+						}
+					} else {
+						categorySet.add('Uncategorized');
+					}
+				});
+
+				const categories = Array.from(categorySet).sort((x, y) => x.localeCompare(y));
+
+				// helper: normalize a name into a class-friendly token
+				const normalize = name =>
+					name
+						.toLowerCase()
+						.replace(/\s+/g, '-')
+						.replace(/[^a-z0-9-]/g, '-');
+
+				const createAppLink = app => {
 					const appLink = document.createElement('a');
 					appLink.href = `/&?q=${encodeURIComponent(app.name)}`;
 
+					// add category ids for potential filtering and searchable class
 					if (app.categories && app.name) {
 						app.categories.forEach(category => {
-							appLink.id =
-								(appLink.id ? appLink.id + ' ' : '') + category;
+							appLink.id = (appLink.id ? appLink.id + ' ' : '') + category;
 						});
-
-						let appNameClass = app.name
-							.toLowerCase()
-							.replace(/\s+/g, '-')
-							.replace(/[^a-z0-9]/g, '-');
-						appLink.className = appNameClass;
 					}
+
+					let appNameClass = normalize(app.name || '');
+					appLink.className = appNameClass;
 
 					const appImage = document.createElement('img');
 					appImage.src = app.img;
@@ -248,11 +280,84 @@ document.addEventListener('DOMContentLoaded', () => {
 					};
 
 					appLink.appendChild(appImage);
-					appsContainer.appendChild(appLink);
+					return appLink;
+				};
+
+				// render folder buttons
+				foldersWrapper.innerHTML = '';
+
+				const makeFolderBtn = (label, active = false) => {
+					const btn = document.createElement('button');
+					btn.className = 'appFolderBtn';
+					if (active) btn.classList.add('active');
+					btn.textContent = label;
+					return btn;
+				};
+
+				// 'All' button
+				const allBtn = makeFolderBtn('All', true);
+				allBtn.dataset.cat = 'all';
+				foldersWrapper.appendChild(allBtn);
+
+				categories.forEach(cat => {
+					const btn = makeFolderBtn(cat);
+					btn.dataset.cat = cat;
+					foldersWrapper.appendChild(btn);
 				});
 
-				const appsSearchInput =
-					document.querySelector('.appsSearchInput');
+				// render apps for a given category (or 'all')
+				const renderAppsByCategory = activeCat => {
+					appsContainer.innerHTML = '';
+
+					if (activeCat === 'all') {
+						appsContainer.classList.remove('grouped');
+						data.forEach(app => {
+							appsContainer.appendChild(createAppLink(app));
+						});
+					} else {
+						appsContainer.classList.add('grouped');
+
+						// header for the category
+						const header = document.createElement('div');
+						header.className = 'appGroupHeader';
+						header.textContent = activeCat;
+						appsContainer.appendChild(header);
+
+						const row = document.createElement('div');
+						row.className = 'appRow';
+
+						data
+							.filter(app =>
+								(app.categories || [])
+									.map(c => c.toLowerCase())
+									.includes(activeCat.toLowerCase())
+							)
+							.forEach(app => {
+								row.appendChild(createAppLink(app));
+							});
+
+						appsContainer.appendChild(row);
+					}
+				};
+
+				// initial render
+				renderAppsByCategory('all');
+
+				// folder button click handling
+				foldersWrapper.addEventListener('click', e => {
+					const btn = e.target.closest('.appFolderBtn');
+					if (!btn) return;
+
+					// remove active from others
+					foldersWrapper.querySelectorAll('.appFolderBtn').forEach(b => b.classList.remove('active'));
+					btn.classList.add('active');
+
+					const cat = btn.dataset.cat || 'all';
+					renderAppsByCategory(cat);
+				});
+
+				// search behavior (filters currently rendered items)
+				const appsSearchInput = document.querySelector('.appsSearchInput');
 				appsSearchInput.addEventListener('input', () => {
 					const appsImages = document.querySelectorAll('.appImage');
 					appsImages.forEach(image => {
@@ -264,8 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
 						.replace(/\s+/g, '-')
 						.replace(/[^a-z0-9]/g, '-');
 
-					const appLinks =
-						document.querySelectorAll('.appsContainer a');
+					const appLinks = document.querySelectorAll('.appsContainer a');
 					appLinks.forEach(link => {
 						if (link.className.includes(searchQuery)) {
 							link.style.display = '';
@@ -294,4 +398,46 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 		});
 	}
+});
+
+// Modal wiring for Add App
+document.addEventListener('DOMContentLoaded', () => {
+	const addBtn = document.getElementById('addAppBtn');
+	const modal = document.getElementById('addAppModal');
+	const cancel = document.getElementById('cancelAddApp');
+	const save = document.getElementById('saveAddApp');
+
+	if (!addBtn || !modal) return;
+
+	addBtn.addEventListener('click', () => {
+		modal.style.display = 'flex';
+	});
+
+	cancel.addEventListener('click', () => {
+		modal.style.display = 'none';
+	});
+
+	save.addEventListener('click', () => {
+		const name = document.getElementById('customAppName').value.trim();
+		const url = document.getElementById('customAppUrl').value.trim();
+		let img = document.getElementById('customAppImg').value.trim();
+		const cats = document.getElementById('customAppCats').value.trim();
+
+		if (!name || !url) {
+			alert('Name and URL are required');
+			return;
+		}
+
+		if (!img) img = '/assets/default.png';
+
+		const categories = cats ? cats.split(',').map(c => c.trim()).filter(Boolean) : ['custom'];
+
+		const custom = JSON.parse(localStorage.getItem('customApps') || '[]');
+		custom.unshift({ name, url, img, categories: ['all', ...categories] });
+		localStorage.setItem('customApps', JSON.stringify(custom));
+
+		modal.style.display = 'none';
+		// reload the page's apps section to show the new custom app
+		window.location.reload();
+	});
 });
