@@ -42,7 +42,7 @@ function safeName(name) {
 }
 
 async function fetchFaviconFor(site) {
-	const url = site.url;
+	const {url} = site;
 	try {
 		const u = new URL(url);
 		const domain = u.hostname;
