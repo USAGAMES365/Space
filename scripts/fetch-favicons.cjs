@@ -16,6 +16,10 @@ const a = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
 
 const args = process.argv.slice(2);
 const fetchAll = args.includes('--all');
+const concurrencyArg = args.find(a => a.startsWith('--concurrency='));
+const concurrency = concurrencyArg ? parseInt(concurrencyArg.split('=')[1], 10) : 8;
+const limitArg = args.find(a => a.startsWith('--limit='));
+const limit = limitArg ? parseInt(limitArg.split('=')[1], 10) : null;
 
 function fetchUrl(url) {
     return new Promise((resolve, reject) => {
@@ -104,13 +108,25 @@ async function fetchFaviconFor(site) {
 }
 
 async function main() {
+    const tasks = [];
     for (const site of a) {
-        // only process entries that map to public/assets/imgs/a/ by default
         if (!site.img || !site.img.includes('/assets/imgs/a/')) continue;
         const base = path.basename(site.img);
         const outPath = path.join(outDir, base);
         if (!fetchAll && fs.existsSync(outPath)) continue;
-        await fetchFaviconFor(site);
+        tasks.push(site);
+    }
+
+    const totalToFetch = limit ? Math.min(limit, tasks.length) : tasks.length;
+    console.log(`Found ${tasks.length} sites to fetch; will process ${totalToFetch}; running with concurrency=${concurrency}`);
+
+    let i = 0;
+    while (i < totalToFetch) {
+        const batchEnd = Math.min(i + concurrency, totalToFetch);
+        const batch = tasks.slice(i, batchEnd).map(site => fetchFaviconFor(site));
+        await Promise.all(batch);
+        i = batchEnd;
+        console.log(`Progress: ${i}/${totalToFetch}`);
     }
 }
 
