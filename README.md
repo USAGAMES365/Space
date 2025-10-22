@@ -55,10 +55,6 @@ Click on the buttons below to deploy this repository (`USAGAMES365/Space`) insta
 ### Glitch
 [![Remix on Glitch](https://cdn.glitch.com/2703bcf6-df7d-46e3-9993-cf5276c1d86c%2Fglitch-deploy-button.svg)](https://glitch.com/edit/#!/import/github/USAGAMES365/Space)
 
-### Azure
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://deploy.azure.com/?repository=https://github.com/USAGAMES365/Space)
-*(Note: This link may not be working as you mentioned.)*
-
 ### IBM Cloud / Bluemix
 [![Deploy to IBM Cloud](https://cloud.ibm.com/devops/setup/deploy/button.png)](https://cloud.ibm.com/devops/setup/deploy?repository=https://github.com/USAGAMES365/Space)
 
