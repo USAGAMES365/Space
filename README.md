@@ -40,9 +40,54 @@ pnpm start
 git pull --force --allow-unrelated-histories
 ```
 
-<a target="_blank" href="https://heroku.com/deploy/?template=https://github.com/NightProxy/Space"><img alt="Deploy to Heroku" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg"></a>
-<a target="_blank" href="https://app.koyeb.com/deploy?type=git&repository=github.com/NightProxy/Space"><img alt="Deploy to Koyeb" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg"></a>
-<a target="_blank" href="https://app.cyclic.sh/api/app/deploy/NightProxy/Space"><img alt="Deploy to Cyclic" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/cyclic.svg"></a>
+# 🚀 One-Click Deployment for Space
+
+Click on the buttons below to deploy this repository (`USAGAMES365/Space`) instantly to your favorite cloud provider.
+
+## Deployment Links
+
+### Heroku
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy/?template=https://github.com/USAGAMES365/Space)
+
+### Replit
+[![Run on Replit](https://replit.com/badge/github/USAGAMES365/Space)](https://replit.com/github/USAGAMES365/Space)
+
+### Glitch
+[![Remix on Glitch](https://cdn.glitch.com/2703bcf6-df7d-46e3-9993-cf5276c1d86c%2Fglitch-deploy-button.svg)](https://glitch.com/edit/#!/import/github/USAGAMES365/Space)
+
+### Azure
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://deploy.azure.com/?repository=https://github.com/USAGAMES365/Space)
+*(Note: This link may not be working as you mentioned.)*
+
+### IBM Cloud / Bluemix
+[![Deploy to IBM Cloud](https://cloud.ibm.com/devops/setup/deploy/button.png)](https://cloud.ibm.com/devops/setup/deploy?repository=https://github.com/USAGAMES365/Space)
+
+### AWS Amplify Console
+[![Deploy to AWS Amplify](https://oneclick.amplifyapp.com/button.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/USAGAMES365/Space)
+
+### Google Cloud
+[![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run/?git_repo=https://github.com/USAGAMES365/Space)
+
+### Oracle Cloud
+[![Deploy to Oracle Cloud](https://cloud.oracle.com/resourcemanager/img/resourcemanager-button.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/USAGAMES365/Space/archive/refs/heads/main.zip)
+
+### Railway
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/USAGAMES365/Space)
+
+### Vercel
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/USAGAMES365/Space)
+
+### Netlify
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/USAGAMES365/Space)
+
+### Koyeb
+[![Deploy to Koyeb](https://www.koyeb.com/for-developers/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/USAGAMES365/Space&branch=main&name=Space)
+
+### Render
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/USAGAMES365/Space)
+
+### Cyclic
+[![Deploy to Cyclic](https://public-assets.cyclic.app/assets/cyc-deploy.svg)](https://app.cyclic.sh/api/app/deploy/USAGAMES365/Space)
 
 ## Where to ask for help
 
